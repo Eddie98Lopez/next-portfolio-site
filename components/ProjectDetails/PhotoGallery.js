@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ImageContainer } from '../Gallery/ThumbContainer';
+import { ImageContainer } from '../Gallery/GalleryThumb.styles';
 import Image from 'next/image'
+import { useProject } from './ProjectProvider';
 
 const ProjectImage = styled(ImageContainer)`
   pointer-events: none;
@@ -36,7 +37,8 @@ const Grid = styled.div`
   }
 `;
 
-const PhotoGallery = ({images,...props}) => {
+const PhotoGallery = (props) => {
+    const {images,title} = useProject()
 
   return (
     <Grid>
@@ -46,7 +48,7 @@ const PhotoGallery = ({images,...props}) => {
           priority={true}
           layout="fill"
           src={item.href}
-          alt={'project iamge'}
+          alt={`${title} photo ${images.indexOf(item)}`}
         />
       </ProjectImage>
     ))}
