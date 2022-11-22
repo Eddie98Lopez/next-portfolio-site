@@ -15,16 +15,16 @@ function scrollFunction() {
     document.body.scrollTop > 50 ||
     document.documentElement.scrollTop > 50
   ) {
-    nav.style.padding = ".25rem 5% .5rem 5%";
+    nav.style.padding = ".25rem 5% .25rem 5%";
     nav.style.boxShadow = "3px 3px 5px rgba(0,0,0,.1)";
   
-    logo.style.height = "2.5rem";
+    logo.style.height = "1.9rem";
   
   } else {
    
     nav.style.padding = "3rem 5%";
     nav.style.boxShadow = "3px 3px 3px rgba(0,0,0,0)";
-    logo.style.height = "75px";
+    logo.style.height = "50px";
   }
 }
 
@@ -44,8 +44,8 @@ const Nav = styled.nav`
 
   & #nav-logo {
     transition: all 0.3s ease-in-out;
-    height: 75px;
     width: auto;
+    height:50px;
   }
 
   & div {
@@ -55,7 +55,7 @@ const Nav = styled.nav`
     transition: all 0.2s ease-in-out;
     color: black;
     font-weight: 900;
-    border-bottom: 3px solid coral;
+    border-bottom: 2px solid coral;
   }
 
   & .social-list {

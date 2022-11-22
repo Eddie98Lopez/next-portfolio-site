@@ -1,12 +1,12 @@
 import React from 'react'
 import UnderConstruction from '../components/UnderConstruction'
 
-const services = () => {
+const contact = () => {
   return (
     <div>
-      <UnderConstruction/>
+        <UnderConstruction/>
     </div>
   )
 }
 
-export default services
+export default contact

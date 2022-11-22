@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import { ImageContainer } from "../components/Gallery/ThumbContainer";
+import { ImageContainer } from "../components/Gallery/GalleryThumb.styles";
 import SocialList from "../components/SocialMedia/SocialList";
 
 const AboutMe = styled.section`

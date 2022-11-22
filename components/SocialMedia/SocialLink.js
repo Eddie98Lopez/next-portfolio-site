@@ -6,7 +6,7 @@ const LinkWrap = styled.a`
 & svg{
   cursor:pointer;
   transition: all ease-in-out .3s;
-  height: 30px;
+  height: 25px;
   width: auto;
   fill:lightgray;
 

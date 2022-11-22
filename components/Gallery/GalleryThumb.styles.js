@@ -1,5 +1,20 @@
 import styled from "styled-components";
 
+export const GridList = styled.ul`
+width: 90%;
+margin:auto;
+padding: 1rem;
+display: grid;
+grid-template-columns: repeat(4,1fr);
+gap:2rem;
+padding-bottom:15vh;
+
+@media only screen and (max-width:768px){
+  width:100%;
+  grid-template-columns: repeat(2,1fr);
+  gap:1rem;
+}`
+
 const ThumbContainer = styled.li`
 font-family: acumin-pro-condensed, sans-serif;
 letter-spacing:1px;

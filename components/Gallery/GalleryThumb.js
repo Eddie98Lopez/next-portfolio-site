@@ -1,5 +1,5 @@
 import React from "react";
-import ThumbContainer, { ImageContainer } from "./ThumbContainer";
+import ThumbContainer, { ImageContainer } from "./GalleryThumb.styles";
 import Link from "next/link";
 import Image from "next/image";
 

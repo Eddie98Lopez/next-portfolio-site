@@ -2,11 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import GalleryList from '../components/Gallery/GalleryList'
 import { useStore } from '../utils/store/StoreProvider'
-import { createClient } from "@supabase/supabase-js";
-
-const supabaseUrl = "https://ldrjmzbrinwdylthbzry.supabase.co";
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
-export const supabase = createClient(supabaseUrl, supabaseKey);
+import supabase from '../utils/supabase'
 
 
 export async function getStaticProps() {
@@ -21,14 +17,10 @@ export async function getStaticProps() {
 
 export default function Home(props) {
  
-/*   const {projects,load} = useStore().store
-  console.log(projects) */
  
   return (
     <div>
       <GalleryList array={props.projects}/>
-  
-
     </div>
   )
 }

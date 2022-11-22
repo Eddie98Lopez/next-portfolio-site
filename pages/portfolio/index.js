@@ -1,9 +1,25 @@
 import React from 'react'
 
-const Portfolio = () => {
-  return (
-    <div>Portfolio</div>
-  )
+import GalleryList from '../../components/Gallery/GalleryList'
+import supabase from '../../utils/supabase'
+
+
+export async function getStaticProps() {
+  const projects = await supabase.from("projects").select("*");
+  return {
+    props: {projects:projects.data}, // will be passed to the page component as props
+  }
 }
 
-export default Portfolio
+
+
+
+export default function Portfolio(props) {
+ 
+ 
+  return (
+    <div>
+      <GalleryList array={props.projects}/>
+    </div>
+  )
+}

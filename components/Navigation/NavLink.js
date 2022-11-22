@@ -15,10 +15,12 @@ cursor:pointer;
 transition: all .2s ease-in-out;
 
 font-family: acumin-pro-condensed, sans-serif;
+font-size:.8rem;
 font-weight: bolder;
 text-transform: uppercase;
 color:grey;
-border-bottom: 3px solid rgba(0,0,0,0);
+border: 2px solid rgba(0,0,0,0)
+border-bottom: 2px solid rgba(0,0,0,0);
 
 & p {
     display:inline-block;
@@ -27,11 +29,11 @@ border-bottom: 3px solid rgba(0,0,0,0);
 };
 
 &:hover {
-    border-bottom: 3px solid darkgray;
+    border-bottom: 2px solid darkgray;
 
     p {
         
-        transform:  translate(0,-10px) ;
+        transform:  translate(0,-7px) ;
         transition: all ease-in-out .3s;
     }
 }

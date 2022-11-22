@@ -13,7 +13,7 @@ top: 8rem;
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: 5px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
