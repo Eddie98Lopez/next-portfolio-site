@@ -102,7 +102,7 @@ const About = (props) => {
         <h2>About Me</h2>
 
         <p>
-          I’m a Cental Valley based designer specializing in graphic design, illustration, and web-development. I can do anything from logos to website design. Coding to book cover illustrations.  I love pn branding and web projects for local, small businesses. I can hold my own as a designer and a web developer separately but love working on projects where I can wear both hats.
+          I’m a Cental Valley based designer specializing in graphic design, illustration, and web-development. I can do anything from logos to website design. Coding to book cover illustrations.  I love working on branding and web projects for local, small businesses. I can hold my own as a designer and a web developer separately but love working on projects where I can do both.
         </p>
         <SocialList />
       </div>
