@@ -2,10 +2,9 @@ import Layout from "../components/Layout";
 import "../styles/globals.css";
 import StoreProvider from "../utils/store/StoreProvider";
 import {useEffect} from 'react'
+import ScrollToTop from "../components/ScrollToTop";
 
-const backToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
+
 
 
 
@@ -21,7 +20,8 @@ function MyApp({ Component, pageProps }) {
 
       <Layout>
         <Component {...pageProps} />
-        <button onClick={backToTop}>Scroll to Top</button>
+        {/* <button onClick={backToTop}>Scroll to Top</button> */}
+        <ScrollToTop/>
       </Layout>
     </StoreProvider>
   );
