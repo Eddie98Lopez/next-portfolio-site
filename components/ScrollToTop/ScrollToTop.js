@@ -1,11 +1,12 @@
 import React, {useEffect}from 'react'
 import ScrollButton from './ScrollToTop.styles'
+import ToTopIcon from './backToTop';
 
 function buttonAppear() {
   const button = document.getElementById("scrollButton");
   if (
-    document.body.scrollTop > 80 ||
-    document.documentElement.scrollTop > 80
+    document.body.scrollTop > 200 ||
+    document.documentElement.scrollTop > 200
   ) {
       button.style.opacity = 1
   
@@ -30,7 +31,9 @@ const ScrollToTop = () => {
   },[])
 
   return (
-    <ScrollButton onClick={toTop} id='scrollButton'> </ScrollButton >
+    <ScrollButton onClick={toTop} id='scrollButton'>
+      <ToTopIcon fill='grey'/>
+    </ScrollButton >
   )
 }
 
