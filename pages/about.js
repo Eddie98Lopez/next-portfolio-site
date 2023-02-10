@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import { ImageContainer } from "../components/Gallery/GalleryThumb.styles";
 import SocialList from "../components/SocialMedia/SocialList";
+import Head from 'next/head'
 
 const AboutMe = styled.section`
   width: 100%;
@@ -97,6 +98,10 @@ const Profile = styled(ImageContainer)`
 
 const About = (props) => {
   return (
+    <>
+    <Head>
+      <title>About Me | Eddie Lopez | Graphic Designer | Illustrator | Fresno CA </title>
+    </Head>
     <AboutMe>
       <div className="bio">
         <h2>About Me</h2>
@@ -117,6 +122,7 @@ const About = (props) => {
         </Profile>
       </div>
     </AboutMe>
+    </>
   );
 };
 
