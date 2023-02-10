@@ -1,6 +1,7 @@
 import React, {useEffect}from 'react'
 import ScrollButton from './ScrollToTop.styles'
 import ToTopIcon from './backToTop';
+import { useScroll } from '../../utils/ScrollPosition';
 
 function buttonAppear() {
   const button = document.getElementById("scrollButton");
@@ -25,13 +26,17 @@ const toTop = () => {
 
 
 const ScrollToTop = () => {
+  const boop = useScroll()
+  //console.log(boop)
 
-  useEffect(()=>{
-    window.onscroll = function () {buttonAppear()}
-  },[])
+/*   useEffect(()=>{
+    window.onscroll = function () {buttonAppear()
+ 
+  console.log(boop) }
+  },[]) */
 
   return (
-    <ScrollButton onClick={toTop} id='scrollButton'>
+    <ScrollButton onClick={toTop} id='scrollButton' scroll={boop}>
       <ToTopIcon fill='grey'/>
     </ScrollButton >
   )

@@ -12,17 +12,26 @@ height: 40px;
 border-radius: 200px;
 border: 1px solid lightgrey;
 background:white;
-box-shadow: 3px 3px 3px rgba(0,0,0,.075);
+box-shadow: 2px 2px 5px rgba(0,0,0,.2);
 transition: .3s ease-in;
 display:grid;
 place-content:center center;
 cursor:pointer;
+opacity:${props=>props.scroll > 350 ? '1' : '0'};
 
 
 & svg{
     width: 100%;
     height: auto;
     margin:auto;
+    fill: rgba(0,0,0,.2);
+    transition: .2s ease-in;
+}
+
+&:hover{
+    & svg{
+        fill: rgba(0,0,0,.6);
+    }
 }
 `
 
