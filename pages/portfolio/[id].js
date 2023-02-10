@@ -5,17 +5,17 @@ import { useRouter } from "next/router";
 import PhotoGallery from "../../components/ProjectDetails/PhotoGallery";
 import ProjectProvider from "../../components/ProjectDetails/ProjectProvider";
 import { Details } from "../../components/ProjectDetails/Details";
-
+import Head from "next/head";
 
 const Wrapper = styled.section`
   box-sizing: border-box;
   width: 95%;
-  margin:auto;
+  margin: auto;
   display: grid;
   height: 100%;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: auto;
-  gap:2.5%;
+  gap: 2.5%;
 
   @media only screen and (max-width: 768px) {
     display: block;
@@ -31,14 +31,20 @@ const ProjectDetail = (props) => {
   }, [id]);
 
   return (
-    project.images && (
+    <>
+    
+      <Head>
+        <title>Eddie Lopez | {project.title}</title>
+      </Head>
+      {project.images && (
       <ProjectProvider value={project}>
-      <Wrapper>
-        <PhotoGallery images={project.images}/>
-        <Details/>
-      </Wrapper>
+        <Wrapper>
+          <PhotoGallery images={project.images} />
+          <Details />
+        </Wrapper>
       </ProjectProvider>
-    )
+      )}
+    </>
   );
 };
 
