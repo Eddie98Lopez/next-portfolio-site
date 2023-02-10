@@ -34,7 +34,9 @@ const ProjectDetail = (props) => {
     <>
     
       <Head>
-        <title>Eddie Lopez | {project.title}</title>
+        <title>Eddie Lopez | {project.title} | Graphic Designer | Illustrator | Fresno CA</title>
+        <meta name='description' content={project.description}/>
+        <meta name='keywords' content='Eddie Lopez, graphic designer, illustrator, creative, Fresno, portfolio'/>
       </Head>
       {project.images && (
       <ProjectProvider value={project}>

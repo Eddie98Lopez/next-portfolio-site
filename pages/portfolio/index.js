@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Head from 'next/head'
 import GalleryList from '../../components/Gallery/GalleryList'
 import supabase from '../../utils/supabase'
 
@@ -20,8 +20,13 @@ export default function Portfolio(props) {
  console.log(props.projects)
  
   return (
+    <>
+    <Head>
+      <title>Portfolio | Graphic Designer | Illustrator | Eddie Lopez | Fresno CA</title>
+    </Head>
     <div>
       <GalleryList array={props.projects}/>
     </div>
+    </>
   )
 }
