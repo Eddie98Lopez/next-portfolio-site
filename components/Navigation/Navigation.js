@@ -7,26 +7,8 @@ import Logo from "../Logo";
 import Hamburger from "./Hamburger";
 import SocialList from "../SocialMedia/SocialList";
 import Link from "next/link";
+import { useScroll } from "../../utils/ScrollPosition";
 
-function scrollFunction() {
-  const nav = document.getElementById("navbar");
-  const logo = document.getElementById("nav-logo");
-  if (
-    document.body.scrollTop > 50 ||
-    document.documentElement.scrollTop > 50
-  ) {
-    nav.style.padding = ".25rem 5% .25rem 5%";
-    nav.style.boxShadow = "3px 3px 5px rgba(0,0,0,.1)";
-  
-    logo.style.height = "1.9rem";
-  
-  } else {
-   
-    nav.style.padding = "3rem 5%";
-    nav.style.boxShadow = "3px 3px 3px rgba(0,0,0,0)";
-    logo.style.height = "50px";
-  }
-}
 
 const Nav = styled.nav`
   width: 100%;
@@ -41,11 +23,13 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   gap: 1.75rem;
+  padding:${props=>props.scroll > 50 ?'.25rem 5% .25rem 5%': "3rem 5%"};
+  box-shadow:${props=>props.scroll > 50 ?'3px 3px 5px rgba(0,0,0,.1)': "3px 3px 3px rgba(0,0,0,0)"};
 
   & #nav-logo {
     transition: all 0.3s ease-in-out;
     width: auto;
-    height:50px;
+    height:${props=>props.scroll > 50 ?'1.9rem': "50px"};;
   }
 
   & div {
@@ -94,6 +78,7 @@ const Nav = styled.nav`
 
 const Navigation = (props) => {
   const [mobile, setMobile] = useState(false);
+  const scroll = useScroll()
 
   const { asPath } = useRouter();
 
@@ -101,15 +86,15 @@ const Navigation = (props) => {
     setMobile(false);
   }, [asPath]);
 
-  useEffect(() => {
+/*   useEffect(() => {
     window.onscroll = function () {
       scrollFunction();
     };
-  }, []);
+  }, []); */
 
   return (
     <MobileContext.Provider value={{ mobile, setMobile }}>
-      <Nav id="navbar" mobile={mobile}>
+      <Nav id="navbar" mobile={mobile} scroll={scroll}>
         <div className="mobile-nav">
           <Link href="/">
             <Logo id="nav-logo" />
