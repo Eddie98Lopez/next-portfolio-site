@@ -18,9 +18,13 @@ export async function getStaticProps() {
 export default function Home(props) {
  
  
-  return (
+  return (<>
+    <Head>
+    <title>Graphic Designer | Illustrator | Eddie Lopez | Fresno CA</title>
+    </Head>
     <div>
       <GalleryList array={props.projects}/>
     </div>
+    </>
   )
 }
