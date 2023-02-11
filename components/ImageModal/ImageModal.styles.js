@@ -9,7 +9,7 @@ left:0;
 z-index: 600000000000000000000000;
 background: rgba(0,0,0,.5);
 backdrop-filter:blur(3px);
-display:grid;
+display:${props => props.display === 'true' ? 'grid' : 'none'};
 place-content: center center;
 `
 

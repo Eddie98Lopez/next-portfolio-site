@@ -41,7 +41,7 @@ const ProjectDetail = (props) => {
       </Head>
       {project.images && (
       <ProjectProvider value={project}>
-        <ImageModal array={project.images}/>
+        <ImageModal array={project.images} display={true}/>
         <Wrapper>
           <PhotoGallery images={project.images} />
           <Details />

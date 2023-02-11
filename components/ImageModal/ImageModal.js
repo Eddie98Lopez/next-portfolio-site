@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React , {useState} from 'react'
 import { ModalContent, ModalWrapper } from './ImageModal.styles'
+import { useImgIndex, useDispatch, useModal } from '../ProjectDetails/ProjectProvider'
 
 
 /*
@@ -20,20 +21,27 @@ Features:
 */
 
 const ImageModal = (props) => {
-    const {array} = props
+    const {array,display} = props
+    const active = useImgIndex()
+    const dispatch = useDispatch()
+    const modal = useModal()
+    const close = () => dispatch({type:"TOGGLE_MODAL"})
+    const updateImgIndex = (payload) => dispatch({type:'UPDATE_IMG_INDEX', payload:payload })
 
-    const [active,setActive] = useState(2)
+
     const goPrev = () => {
-        active === 0 ? setActive(array.length - 1) : setActive(active - 1) 
+        active === 0 ?updateImgIndex(array.length - 1) :updateImgIndex(active - 1) 
     }
     const goNext = () => {
-        active + 1 > array.length - 1 ? setActive(0) : setActive(active + 1) 
+        active + 1 > array.length - 1 ? updateImgIndex(0) : updateImgIndex(active+1)  
     }
 
-    console.log(props.array)
+
+    console.log(props.array[active])
   return (
-    <ModalWrapper>
+    <ModalWrapper display={modal.toString()}>
         <ModalContent>
+            <button onClick={close}>close</button>
             <div><img src={array[active].href} alt='projectimage'/></div>
             <button onClick={goPrev}>prev</button>
             <button onClick={goNext}>next</button>
