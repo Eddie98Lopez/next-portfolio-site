@@ -6,6 +6,7 @@ height: 100vh;
 width: 100%;
 position:fixed;
 box-sizing:border-box;
+padding:0;
 top:0;
 left:0;
 margin:auto;
@@ -13,24 +14,29 @@ text-align:center;
 z-index: 600000000000000000000000;
 background: rgba(0,0,0,.65);
 backdrop-filter:blur(7px);
-display:${props => props.display === 'true' ? 'grid' : 'none'};
+display:${props => props.display === 'true' ? 'flex' : 'none'};
+
 
 `
 
 export const ModalContent = styled.div`
 width: 100%;
 height: 85vh;
-margin:auto;
+margin:0 auto;
 
 box-sizing: border-box;
-display:grid;
-gap:1rem;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+gap:.5rem;
 
 
 & div:nth-child(2) {
     object-fit:contain;
     box-sizing:border-box;
     height:inherit;
+
+
     
 & img{
     height:100%;
@@ -39,12 +45,34 @@ gap:1rem;
 }
 }
 
+@media only screen and (max-width:700px){
+    width:95%;
+   margin:auto;
+    gap:0;
+
+
+    & div:nth-child(2) {
+        object-fit:contain;
+        box-sizing:border-box;
+        width: 100%;
+        height:auto;
+    
+    
+        
+    & img{
+        object-fit:contain;
+        width:inherit;
+        height:auto
+
+        
+    }
+
+
+}
+
 `
 
 export const CloseButton = styled.button`
-position:absolute;
-top:1.5rem;
-right: 1.5rem;
 color: white;
 width: 1.5rem;
 height: 1.5rem;
@@ -77,7 +105,7 @@ export const Buttons = styled.div`
 box-sizing: border-box;
 width:100%;
 display:flex;
-gap: 2rem;
+gap: 1rem;
 place-content:center center;
 color:white;
 font-family:sans-serif;
