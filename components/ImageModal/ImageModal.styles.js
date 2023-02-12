@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import ScrollButton from '../ScrollToTop/ScrollToTop.styles'
+
 
 export const ModalWrapper = styled.div`
 height: 100vh;
@@ -77,13 +77,21 @@ gap:1rem;
 
 export const CloseButton = styled.button`
 color: white;
-width: 3rem;
-height: 6rem;
+width: 2.5rem;
+width:2.5rem;
 text-align:center;
-border: white solid 2px;
 background: none;
+border:none;
 border-radius:300px;
 align-self:flex-end;
+& svg{
+    fill:white;
+}
+
+@media only screen and (max-width:768px){
+    height:3.5rem;
+    width:3.5rem;
+}
 `
 
 export const TraverseButton = styled.button`
@@ -102,16 +110,22 @@ background:none;
     fill:white;
     transform:rotate(${props=>props.rotate});
     height:inherit;
-    width:auto;}`
+    width:auto;}
+    
+@media only screen and (max-width:768px){
+    height:3rem;
+    width:3rem;
+}`
 
 
 export const Buttons = styled.div`
 box-sizing: border-box;
 width:100%;
 display:flex;
-gap: 1rem;
+gap: 2rem;
 place-content:center center;
 color:white;
 font-family:sans-serif;
+font-size:1.15rem;
 `
 
