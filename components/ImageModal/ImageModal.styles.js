@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import ScrollButton from '../ScrollToTop/ScrollToTop.styles'
+
 
 export const ModalWrapper = styled.div`
 height: 100vh;
