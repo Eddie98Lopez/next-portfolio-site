@@ -8,8 +8,7 @@ const ImageModal = (props) => {
   const { array } = props;
   const active = useImgIndex();
   const modal = useModal();
-
-  console.log(props.array[active]);
+  
   return (
     <ModalWrapper display={modal.toString()}>
       <ModalContent>

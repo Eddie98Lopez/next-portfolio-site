@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { ImageContainer } from '../Gallery/GalleryThumb.styles';
 import Image from 'next/image'
-import { useProject, useDispatch, useModal } from './ProjectProvider';
+import { useProject, useDispatch } from './ProjectProvider';
 
 const ProjectImage = styled(ImageContainer)`
 
@@ -53,10 +53,8 @@ const Grid = styled.div`
 const PhotoGallery = (props) => {
     const {images,title} = useProject()
     const dispatch = useDispatch()
-    const modal = useModal()
   
     const toggleModal =  (payload) => {
-      console.log('clicked image')
       dispatch({type:'TOGGLE_MODAL',payload})
       } 
     
