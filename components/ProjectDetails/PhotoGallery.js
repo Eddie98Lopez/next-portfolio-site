@@ -5,6 +5,10 @@ import Image from 'next/image'
 import { useProject, useDispatch, useModal } from './ProjectProvider';
 
 const ProjectImage = styled(ImageContainer)`
+
+& img{
+  pointer-events:none;
+}
 &:hover{
   & img{
     transform: none;
