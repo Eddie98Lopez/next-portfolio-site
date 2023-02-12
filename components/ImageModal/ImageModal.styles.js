@@ -20,15 +20,17 @@ display:${props => props.display === 'true' ? 'flex' : 'none'};
 `
 
 export const ModalContent = styled.div`
-width: 100%;
+width: 100%;;
 height: 85vh;
 margin:0 auto;
+padding:.5rem;
 
 box-sizing: border-box;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-gap:.5rem;
+align-items:center;
+gap:1rem;
 
 
 & div:nth-child(2) {
@@ -41,6 +43,7 @@ gap:.5rem;
 & img{
     height:100%;
     width:auto;
+    pointer-events:none;
     object-fit:contain;
 }
 }
@@ -74,12 +77,13 @@ gap:.5rem;
 
 export const CloseButton = styled.button`
 color: white;
-width: 1.5rem;
-height: 1.5rem;
+width: 3rem;
+height: 6rem;
 text-align:center;
 border: white solid 2px;
 background: none;
 border-radius:300px;
+align-self:flex-end;
 `
 
 export const TraverseButton = styled.button`
