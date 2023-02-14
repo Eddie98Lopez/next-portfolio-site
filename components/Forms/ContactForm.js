@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import { Label,Input, Field, Form, TextArea
  } from './Forms.styles'
  import supabase from '../../utils/supabase'
+ import contactSchema from './contactSchema'
+ import * as Yup from 'yup'
 
  const sendMessage = async (form) => {
     try {
@@ -25,10 +27,16 @@ const initialForm = {
 const ContactForm = () => {
 
     const [form,setForm] = useState(initialForm)
+    const [errs,setErrs] = useState(initialForm)
 
     const change = (e) => {
         const {name, value} = e.target
         setForm({...form,[name]:value})
+
+        Yup.reach(contactSchema,name)
+            .validate(value)
+            .then(res=>setErrs({...errs,[name]:''}))
+            .catch(err=> setErrs({...errs,[name]:err.errors[0]}))
     }
     const submit = (e) =>{
         e.preventDefault()
@@ -47,7 +55,7 @@ const ContactForm = () => {
             value={form.first}
             placeholder='John'
             />
-            <div>first error</div>
+            <div className='errs'>{errs.first}</div>
         </Field>
 
         <Field className='lastName'>
@@ -59,7 +67,7 @@ const ContactForm = () => {
             value={form.last}
             placeholder='doe'
             />
-            <div>first error</div>
+            <div className='errs'>{errs.last}</div>
         </Field>
 
         <Field className='email'>
@@ -71,7 +79,7 @@ const ContactForm = () => {
             value={form.email}
             placeholder='John@doe.com'
             />
-            <div>first error</div>
+            <div className='errs'>{errs.email}</div>
         </Field>
         <Field className='subject'>
             <Label>subject</Label>
@@ -82,7 +90,7 @@ const ContactForm = () => {
             value={form.subject}
             placeholder='subject'
             />
-            <div>first error</div>
+            <div className='errs'>{errs.subject}</div>
         </Field>
 
         <Field className='body'>
@@ -94,7 +102,7 @@ const ContactForm = () => {
             value={form.body}
             placeholder='John'
             />
-            <div>first error</div>
+            <div className='errs'>{errs.body}</div>
         </Field>
 
         <button>send</button>

@@ -110,11 +110,16 @@ transition:.2s ease-in;
 export const Field = styled.div`
 box-sizing:border-box;
 
-& label,input,div{
+& label,input,div, text-area {
     margin: .5rem 0;
+    box-sizing:border-box;
 }
 
 
 & .errs{
-    color:crimson
+    color:crimson;
+    padding:0;
+    width:90%;
+    box-sizing:border-box;
+    font-family:sans-serif
 }`
