@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import { Label,Input, Field, Form, TextArea
+import React, {useState, useEffect} from 'react'
+import { Label,Input, Field, Form, TextArea, SubmitButton
  } from './Forms.styles'
  import supabase from '../../utils/supabase'
  import contactSchema from './contactSchema'
@@ -28,6 +28,7 @@ const ContactForm = () => {
 
     const [form,setForm] = useState(initialForm)
     const [errs,setErrs] = useState(initialForm)
+    const [disabled,setDisabled] = useState(true)
 
     const change = (e) => {
         const {name, value} = e.target
@@ -40,10 +41,14 @@ const ContactForm = () => {
     }
     const submit = (e) =>{
         e.preventDefault()
-        //sendMessage(form)
+        sendMessage(form)
         console.log(form)
         setForm(initialForm)
     }
+
+    useEffect(()=>{
+        contactSchema.isValid(form).then(res=>setDisabled(!res))
+    },[form])
   return (
     <Form onSubmit={submit}>
         <Field className='firstName'>
@@ -105,7 +110,7 @@ const ContactForm = () => {
             <div className='errs'>{errs.body}</div>
         </Field>
 
-        <button>send</button>
+        <SubmitButton disabled = {disabled}>send</SubmitButton>
     </Form>
   )
 }
