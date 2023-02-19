@@ -16,6 +16,7 @@ export async function getStaticProps() {
 
 
 export default function Portfolio(props) {
+  console.log(props.projects)
 
  
   return (
