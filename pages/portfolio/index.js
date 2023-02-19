@@ -5,7 +5,7 @@ import supabase from '../../utils/supabase'
 
 
 export async function getStaticProps() {
-  const projects = await supabase.from("projects").select("*");
+  const projects = supabase.from("projects").select("*").order('created_at',{ ascending: false });
   return {
     props: {projects:projects.data}, // will be passed to the page component as props
     
