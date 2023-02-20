@@ -6,6 +6,7 @@ import PhotoGallery from "../../components/ProjectDetails/PhotoGallery";
 import ProjectProvider from "../../components/ProjectDetails/ProjectProvider";
 import { Details } from "../../components/ProjectDetails/Details";
 import Head from "next/head";
+import ImageModal from "../../components/ImageModal/ImageModal";
 
 const Wrapper = styled.section`
   box-sizing: border-box;
@@ -40,6 +41,7 @@ const ProjectDetail = (props) => {
       </Head>
       {project.images && (
       <ProjectProvider value={project}>
+        <ImageModal array={project.images} display={true}/>
         <Wrapper>
           <PhotoGallery images={project.images} />
           <Details />

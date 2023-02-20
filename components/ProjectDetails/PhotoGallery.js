@@ -2,10 +2,23 @@ import React from 'react'
 import styled from 'styled-components'
 import { ImageContainer } from '../Gallery/GalleryThumb.styles';
 import Image from 'next/image'
-import { useProject } from './ProjectProvider';
+import { useProject, useDispatch } from './ProjectProvider';
 
 const ProjectImage = styled(ImageContainer)`
-  pointer-events: none;
+
+& img{
+  pointer-events:none;
+}
+&:hover{
+  & img{
+    transform: none;
+    transition:none;
+    opacity:1;
+    filter:blur(0px)
+  }
+}
+
+
 `;
 
 const Grid = styled.div`
@@ -39,11 +52,17 @@ const Grid = styled.div`
 
 const PhotoGallery = (props) => {
     const {images,title} = useProject()
+    const dispatch = useDispatch()
+  
+    const toggleModal =  (payload) => {
+      dispatch({type:'TOGGLE_MODAL',payload})
+      } 
+    
 
   return (
     <Grid>
     {images.map((item) => (
-      <ProjectImage key={item.index}>
+      <ProjectImage key={item.index} onClick={()=>toggleModal(item.index-1)}>
         <Image
           priority={true}
           layout="fill"
