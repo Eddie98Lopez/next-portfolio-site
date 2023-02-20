@@ -7,6 +7,7 @@ import ProjectProvider from "../../components/ProjectDetails/ProjectProvider";
 import { Details } from "../../components/ProjectDetails/Details";
 import Head from "next/head";
 import ImageModal from "../../components/ImageModal/ImageModal";
+import MetaTags from "../../components/MetaTags";
 
 const Wrapper = styled.section`
   box-sizing: border-box;
@@ -29,24 +30,27 @@ const ProjectDetail = (props) => {
 
   useEffect(() => {
     getProjectById(id, setProject);
+    //console.log(project.images[0].href)
   }, [id]);
 
   return (
     <>
     
-      <Head>
-        <title>Eddie Lopez | {project.title} | Graphic Designer | Illustrator | Fresno CA</title>
-        <meta name='description' content={project.description}/>
-        <meta name='keywords' content='Eddie Lopez, graphic designer, illustrator, creative, Fresno, portfolio'/>
-      </Head>
+
       {project.images && (
+        <>
+              <MetaTags
+              title={`${project.title} | Graphic Designer | Illustrator | Eddie Lopez | Fresno CA`}
+              img={project.images[0].href}
+              url={`https://www.lopezed.com/portfolio/${project.id}`}
+              description={project.description}/>
       <ProjectProvider value={project}>
         <ImageModal array={project.images} display={true}/>
         <Wrapper>
           <PhotoGallery images={project.images} />
           <Details />
         </Wrapper>
-      </ProjectProvider>
+      </ProjectProvider></>
       )}
     </>
   );

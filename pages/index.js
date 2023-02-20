@@ -20,13 +20,14 @@ export default function Home(props) {
  
  
   return (<>
-    <Head>
-    <title>Graphic Designer | Illustrator | Eddie Lopez | Fresno CA</title>
+    
     <MetaTags
     title='Graphic Designer | Illustrator | Eddie Lopez | Fresno CA'
+    site_name='EddieLopezDesigner'
+    url='https://www.lopezed.com/'
     description={'Portfolio of Central California based freelance graphic designer specializing in all areas of logo design, web design, print graphics. '}
     keywords={'graphic design, design, logo design, branding, central California, Fresno, portfolio, print'}/> 
-    </Head>
+    
     <div>
       <GalleryList array={props.projects}/>
     </div>
