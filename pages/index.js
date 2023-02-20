@@ -3,6 +3,7 @@ import Image from 'next/image'
 import GalleryList from '../components/Gallery/GalleryList'
 import { useStore } from '../utils/store/StoreProvider'
 import supabase from '../utils/supabase'
+import MetaTags from '../components/MetaTags'
 
 
 export async function getStaticProps() {
@@ -21,8 +22,10 @@ export default function Home(props) {
   return (<>
     <Head>
     <title>Graphic Designer | Illustrator | Eddie Lopez | Fresno CA</title>
-    <meta name="keywords" content="graphic design, design, logo design, branding, central California, Fresno, portfolio, print"></meta>
-    <meta name='description' content="Portfolio of Central California based freelance graphic designer specializing in all areas of logo design, web design, print graphics. "/>
+    <MetaTags
+    title='Graphic Designer | Illustrator | Eddie Lopez | Fresno CA'
+    description={'Portfolio of Central California based freelance graphic designer specializing in all areas of logo design, web design, print graphics. '}
+    keywords={'graphic design, design, logo design, branding, central California, Fresno, portfolio, print'}/> 
     </Head>
     <div>
       <GalleryList array={props.projects}/>
