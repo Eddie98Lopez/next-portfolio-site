@@ -15,7 +15,7 @@ cursor:pointer;
 transition: all .2s ease-in-out;
 
 font-family: acumin-pro-condensed, sans-serif;
-font-size:.8rem;
+font-size:.9rem;
 font-weight: bolder;
 text-transform: uppercase;
 color:grey;
