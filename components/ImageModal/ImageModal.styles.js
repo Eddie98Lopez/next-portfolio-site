@@ -58,19 +58,12 @@ gap:1rem;
         object-fit:contain;
         box-sizing:border-box;
         width: 100%;
-        height:auto;
-    
-    
-        
+        height:auto; 
     & img{
         object-fit:contain;
         width:inherit;
         height:auto
-
-        
     }
-
-
 }
 
 `

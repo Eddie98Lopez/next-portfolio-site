@@ -1,20 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { Label,Input, Field, Form, TextArea, SubmitButton
  } from './Forms.styles'
- import supabase from '../../utils/supabase'
  import contactSchema from './contactSchema'
  import * as Yup from 'yup'
-
- const sendMessage = async (form) => {
-    try {
-        const {data} = await supabase.from('messages').insert(form)
-        console.log(data)
-        
-    } catch (error) {
-        console.log(error)
-        
-    }
- }
+import sendMessage from './sendMessage'
 
 const initialForm = {
     first:'',
@@ -41,9 +30,10 @@ const ContactForm = () => {
     }
     const submit = (e) =>{
         e.preventDefault()
-        sendMessage(form)
+        //sendMessage(form)
         console.log(form)
         setForm(initialForm)
+
     }
 
     useEffect(()=>{
