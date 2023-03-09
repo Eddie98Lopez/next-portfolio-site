@@ -4,6 +4,7 @@ import { Label,Input, Field, Form, TextArea, SubmitButton
  import contactSchema from './contactSchema'
  import * as Yup from 'yup'
 import sendMessage from './sendMessage'
+import { useModal } from '../Modal/ModalProvider'
 
 const initialForm = {
     first:'',
@@ -14,6 +15,7 @@ const initialForm = {
 }
 
 const ContactForm = () => {
+    const {modal, dispatch} = useModal()
 
     const [form,setForm] = useState(initialForm)
     const [errs,setErrs] = useState(initialForm)
@@ -30,8 +32,21 @@ const ContactForm = () => {
     }
     const submit = (e) =>{
         e.preventDefault()
-        //sendMessage(form)
+        sendMessage(form).then(res=>{
+                dispatch({type:"OPEN_MODAL", payload:{
+                    title:'MESSAGE SENT',
+                    text:'Message sent successfully. Thank you for reaching out. I will get back to you as soon as possible.',
+                    error:false
+                }})
+            }).catch(err=>{
+                dispatch({type:"OPEN_MODAL", payload:{
+                    title:'MESSAGE NOT SENT',
+                    text:'Message not sent. Please try again.',
+                    error:true
+                }})
+            })
         console.log(form)
+
         setForm(initialForm)
 
     }

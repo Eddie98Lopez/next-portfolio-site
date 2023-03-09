@@ -1,15 +1,18 @@
 import React from 'react'
 import { useModal } from './ModalProvider'
-import { ModalWrapper } from './Modal.styles'
+import { ModalWrapper, ModalContent } from './Modal.styles'
+import DialogBox from './MessageSent'
 
 const Modal = (props) => {
-    console.log(props)
-    const {component} = props
-    const {modal, setModal} = useModal()
+    const {modal, dispatch} = useModal()
   return (
-    <ModalWrapper display={modal.toString()} >
+    <ModalWrapper display={modal.display.toString()} >
 
-    {component()}
+<ModalContent>
+<DialogBox title={modal.title} text={modal.text}/>
+
+<button onClick={()=>dispatch({type:'CLOSE_MODAL'})}>close</button>
+</ModalContent>
         
     </ModalWrapper>
   )

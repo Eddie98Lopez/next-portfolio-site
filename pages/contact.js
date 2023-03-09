@@ -2,16 +2,13 @@ import React from 'react'
 import ContactForm from '../components/Forms/ContactForm'
 import ModalProvider from '../components/Modal/ModalProvider'
 import Modal from '../components/Modal/Modal'
-
-const Boop = (props) =>{
-  return <div>hello </div>
-}
+import DialogBox from '../components/Modal/MessageSent'
 
 const contact = () => {
   return (
     <ModalProvider>
     <div>
-      <Modal component={Boop}/>
+      <Modal/>
         <ContactForm/>
     </div>
     </ModalProvider>
