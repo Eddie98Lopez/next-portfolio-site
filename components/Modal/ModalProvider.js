@@ -4,10 +4,10 @@ import modalReducer from './modalReducer'
 const ModalContext = createContext()
 export const useModal = ()=> useContext(ModalContext)
 const initialState = {
-  display:true,
-  title:';lkasjd ',
-  text: 'boop',
-  error:true,
+  display:false,
+  title:'',
+  text: '',
+  error:false,
 }
 
 
