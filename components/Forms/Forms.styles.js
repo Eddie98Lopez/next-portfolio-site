@@ -33,12 +33,10 @@ grid-template-areas:
 }
 
 @media only screen and (max-width:768px){
-    grid-template-areas:
-    'f'
-    'l'
-    'e'
-    's'
-    'm';
+    
+display:flex;
+flex-direction:column;
+gap: 1.2rem;
 
 }
 `
