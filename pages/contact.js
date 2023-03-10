@@ -1,13 +1,17 @@
 import React from 'react'
 import ContactForm from '../components/Forms/ContactForm'
-import UnderConstruction from '../components/UnderConstruction'
+import ModalProvider from '../components/Modal/ModalProvider'
+import Modal from '../components/Modal/Modal'
+import DialogBox from '../components/Modal/MessageSent'
 
 const contact = () => {
   return (
+    <ModalProvider>
     <div>
-        {/* <UnderConstruction/> */}
+      <Modal/>
         <ContactForm/>
     </div>
+    </ModalProvider>
   )
 }
 
