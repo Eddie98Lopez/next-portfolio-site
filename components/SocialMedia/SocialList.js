@@ -20,6 +20,7 @@ const SocialList = (props) => {
     <List className="social-list">
       {socialsNav.map((item) => (
         <SocialLink
+          linkHeight={props.linkHeight}
           key={socialsNav.indexOf(item)}
           to={item.href}
           className="social-link"
