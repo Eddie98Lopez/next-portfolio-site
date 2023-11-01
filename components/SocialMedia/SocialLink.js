@@ -25,8 +25,8 @@ const LinkWrap = styled.a`
 const SocialLink = ({to, children,fill, ...props}) => {
   
   return (
-    <Link href={to} passHref {...props} >
-    <LinkWrap fill={fill} {...props}>{children}</LinkWrap>
+    <Link href={to} passHref {...props} target='_blank'>
+    <LinkWrap fill={fill} target='_blank' {...props}>{children}</LinkWrap>
     </Link>
   )
 }
