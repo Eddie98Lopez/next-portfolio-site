@@ -28,6 +28,8 @@ const SocialList = (props) => {
           to={item.href}
           className="social-link"
           fill={item.fill}
+          type={item.type}
+          {...props}
         >
           {<item.icon className="social-link" />}
         </SocialLink>
