@@ -3,6 +3,11 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 const LinkWrap = styled.a`
+text-align:center;
+text-transform:capitalize;
+text-decoration:none;
+font-size:1rem;
+color: black;
 & svg{
   cursor:pointer;
   transition: all ease-in-out .3s;
@@ -22,11 +27,14 @@ const LinkWrap = styled.a`
   }
 }`
 
-const SocialLink = ({to, children,fill, ...props}) => {
+const SocialLink = ({to, children,fill,type, showType,...props}) => {
   
   return (
     <Link href={to} passHref {...props} target='_blank'>
-    <LinkWrap fill={fill} target='_blank' {...props}>{children}</LinkWrap>
+    <LinkWrap fill={fill} target='_blank' {...props}>
+      {children}
+      {showType && <p>{type}</p>}
+      </LinkWrap>
     </Link>
   )
 }

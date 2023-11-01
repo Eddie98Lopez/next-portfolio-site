@@ -1,5 +1,5 @@
 import React from "react";
-import { VCardButton, BizCardWrap } from "./BusinessCard.styles";
+import { VCardButton, BizCardWrap,ProfilePicWrap, NameBadge, Card } from "./BusinessCard.styles";
 import SocialList from "../SocialMedia/SocialList";
 import { bizCardSocials } from "../SocialMedia/SocialsArray";
 
@@ -9,22 +9,23 @@ const BusinessCard = () => {
   
   return (
     <BizCardWrap>
-      <div className={"bizCardImg"}>
+      <Card>
+      <ProfilePicWrap className={"bizCardImg"}>
         <img src="/aboutMe.jpg" alt="Picture of the author" />
-      </div>
+      </ProfilePicWrap >
 
-      <div className='name'>
+      <NameBadge>
       <h1>Eduardo Lopez</h1>
       <h2>Graphic Designer | Web Developer</h2>
-      </div>
+      </NameBadge>
 
       <VCardButton href={vCardHREF}>Save Contact</VCardButton>
 
-      <SocialList array = {bizCardSocials} linkHeight='5rem'/>
+      <SocialList array = {bizCardSocials} showType={true}  linkHeight='5rem'/>
 
 
 
-     
+      </Card>
     </BizCardWrap>
   );
 };
