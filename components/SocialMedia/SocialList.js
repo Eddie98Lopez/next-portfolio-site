@@ -6,6 +6,8 @@ import socialsNav from "./SocialsArray";
 
 const List = styled.ul`
   display: flex;
+  justify-content:center;
+  flex-wrap:wrap;
   align-items: center;
   gap: 0.5rem;
   box-sizing: border-box;
@@ -16,12 +18,13 @@ const List = styled.ul`
 `;
 
 const SocialList = (props) => {
+  const array = props.array || socialsNav
   return (
     <List className="social-list">
-      {socialsNav.map((item) => (
+      {array.map((item) => (
         <SocialLink
           linkHeight={props.linkHeight}
-          key={socialsNav.indexOf(item)}
+          key={Math.random()*1000000000}
           to={item.href}
           className="social-link"
           fill={item.fill}
