@@ -22,11 +22,11 @@ const LinkWrap = styled.a`
   }
 }`
 
-const SocialLink = ({to, children,fill,linkHeight, ...props}) => {
-  console.log(linkHeight)
+const SocialLink = ({to, children,fill, ...props}) => {
+  
   return (
-    <Link href={to} passHref {...props} target="_blank" >
-    <LinkWrap target="_blank" fill={fill} linkHeight={linkHeight}>{children}</LinkWrap>
+    <Link href={to} passHref {...props} >
+    <LinkWrap fill={fill} {...props}>{children}</LinkWrap>
     </Link>
   )
 }
