@@ -30,7 +30,6 @@ export const ProfilePicWrap = styled.div`
 }`
 const BizCardWrap = styled.section`
 
-
 min-height: 100vh;
 position: absolute;
 top:0;
@@ -59,8 +58,11 @@ gap:.75rem;
 `
 
 export const Card = styled.div`
+animation: fadeInUp;
+animation-duration: 1s;
+animation-delay: 3s;
 box-sizing:border-box;
-padding: 2rem 0 5rem 0;
+padding: 2rem 0 2rem 0;
 font-family: acumin-pro, sans-serif;
 font-weight: 500;
 font-size:1.5rem;

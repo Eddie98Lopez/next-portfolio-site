@@ -3,6 +3,7 @@ import { VCardButton, BizCardWrap,ProfilePicWrap, NameBadge, Card } from "./Busi
 import SocialList from "../SocialMedia/SocialList";
 import { bizCardSocials } from "../SocialMedia/SocialsArray";
 
+
 const vCardHREF = `https://ldrjmzbrinwdylthbzry.supabase.co/storage/v1/object/public/images/Eduardo%20Lopez.vcf?t=2023-10-30T04%3A45%3A44.425Z`;
 
 const BusinessCard = () => {
