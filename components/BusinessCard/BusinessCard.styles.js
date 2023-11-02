@@ -31,6 +31,7 @@ export const ProfilePicWrap = styled.div`
 const BizCardWrap = styled.section`
 
 min-height: 100vh;
+width:100%;
 position: absolute;
 top:0;
 left:0;
