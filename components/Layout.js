@@ -2,7 +2,7 @@ import React from 'react'
 import Navigation from './Navigation/Navigation'
 import Footer from './Footer'
 import Loading from './Loading'
-import 'animate.css'
+import '../styles/globals.css'
 
 
 const Layout = ({children, ...props}) => {
