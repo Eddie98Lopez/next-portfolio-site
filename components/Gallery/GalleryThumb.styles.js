@@ -16,7 +16,7 @@ padding-bottom:15vh;
 }`
 
 const ThumbContainer = styled.li`
-font-family: acumin-pro-condensed, sans-serif;
+font-family: acumin-pro-condensed,roboto ,  sans-serif;
 letter-spacing:1px;
 
 & h2{

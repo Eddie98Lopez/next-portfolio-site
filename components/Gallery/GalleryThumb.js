@@ -3,23 +3,24 @@ import ThumbContainer, { ImageContainer } from "./GalleryThumb.styles";
 import Link from "next/link";
 import Image from "next/image";
 
-
-
 const GalleryThumb = (props) => {
   const { cover_image, title, id, library } = props.project;
 
-
- 
-
   return (
     <Link
-    href={{
-      pathname: '/portfolio/[id]',
-      query: { id: id },
-    }}>
+      href={{
+        pathname: "/portfolio/[id]",
+        query: { id: id },
+      }}
+    >
       <ThumbContainer duration={Math.random() * 2}>
         <ImageContainer>
-          <Image priority={true} layout='fill' src={cover_image} alt={title}/>
+          <Image
+            layout="fill"
+            src={cover_image}
+            alt={title}
+            quality={30}
+          />
         </ImageContainer>
 
         <div className="info">

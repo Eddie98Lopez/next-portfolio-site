@@ -6,11 +6,11 @@ font-family: acumin-pro, sans-serif;
 position: sticky;
 width: 80%;
 top: 8rem;
-text-align:justify;
+
 
 & h1,h2{
     text-transform: uppercase;
-    font-family: acumin-pro-condensed, sans-serif;
+    font-family: acumin-pro-condensed, roboto, sans-serif;
     letter-spacing: 3px;
     font-weight: 700;
     margin-bottom: 1rem;
