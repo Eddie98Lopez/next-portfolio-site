@@ -7,7 +7,7 @@ place-content:center center;
 height:80vh;
 width:100%;
 
-font-family: acumin-condensed-pro, sans-serif;
+font-family: acumin-pro-condensed , sans-serif;
 color: grey;
 `
 
