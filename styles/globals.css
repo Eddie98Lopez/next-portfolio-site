@@ -1,4 +1,18 @@
 @import url("https://use.typekit.net/rim2aok.css");
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap');
+@font-face {
+  font-family: "GrockMarker";
+  src: url('/GrockMarker/font.woff2') format('woff2'), url('/GrockMarker/font.woff') format('woff');
+}
+
+
+:root {
+  
+  --font-size-base: 16px;
+  --display-type: "Graffiti";
+  --subheading-type: "Cascadia Code", sans-serif;
+  --body-copy:"Cascadia Code", sans-serif;
+}
 
 
 html, body, div, span, applet, object, iframe,
@@ -18,7 +32,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
   box-sizing: border-box;
-  font-family: acumin-pro-condensed, sans-serif;
+  font-family: "Cascadia Code", sans-serif;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -30,6 +44,11 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background: url("/white-texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center center; /* Centers the background image */
+  background-attachment: fixed;
 }
 ol, ul {
 	list-style: none;
@@ -45,4 +64,29 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+.specialBG{
+	background: url("/white-texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center center; /* Centers the background image */
+  background-attachment: fixed;
+
+}
+
+.subheading{
+font-family: "Cascadia Code", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.display-type{
+ font-family:"GrockMarker", sans-serif;
+ text-transform: uppercase;
+ font-style: normal;
+ letter-spacing: -10px;
 }

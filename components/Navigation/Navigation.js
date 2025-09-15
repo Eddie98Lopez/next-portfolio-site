@@ -12,24 +12,25 @@ import { useScroll } from "../../utils/ScrollPosition";
 
 const Nav = styled.nav`
   width: 100%;
-  height: auto;
+  height: ${props=>props.scroll >= 50 ?'50px': "90px"};
   box-sizing: border-box;
-  position: sticky;
-  background: white;
+  position: ${props=>props.scroll >= 50 ?'fixed': "sticky"};
+
   top: 0;
   z-index: 500;
   padding: 3rem 5%;
-  transition: padding 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   display: flex;
   align-items: center;
   gap: 1.75rem;
-  padding:${props=>props.scroll > 50 ?'.25rem 5% .25rem 5%': "3rem 5%"};
-  box-shadow:${props=>props.scroll > 50 ?'3px 3px 5px rgba(0,0,0,.1)': "3px 3px 3px rgba(0,0,0,0)"};
+  border-bottom:${props=>props.scroll <= 50 ? "none": "2px solid black"};
+  
+  box-shadow:${props=>props.scroll >= 50 ?'3px 3px 5px rgba(0,0,0,.1)': "3px 3px 3px rgba(0,0,0,0)"};
 
   & #nav-logo {
     transition: all 0.3s ease-in-out;
     width: auto;
-    height:${props=>props.scroll > 50 ?'1.9rem': "50px"};;
+    height:${props=>props.scroll >= 50 ?'45px': "75px"};;
   }
 
   & div {
@@ -94,7 +95,7 @@ const Navigation = (props) => {
 
   return (
     <MobileContext.Provider value={{ mobile, setMobile }}>
-      <Nav id="navbar" mobile={mobile} scroll={scroll}>
+      <Nav id="navbar" mobile={mobile} scroll={scroll} className={scroll>=50 && "specialBG"}>
         <div className="mobile-nav">
           <Link href="/">
             <Logo id="nav-logo" />
@@ -103,7 +104,7 @@ const Navigation = (props) => {
         </div>
 
         <LinksList />
-        <SocialList />
+        {/* <SocialList /> */}
       </Nav>
     </MobileContext.Provider>
   );
