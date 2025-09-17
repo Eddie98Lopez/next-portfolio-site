@@ -4,10 +4,11 @@ import GalleryList from '../components/Gallery/GalleryList'
 import { useStore } from '../utils/store/StoreProvider'
 import supabase from '../utils/supabase'
 import MetaTags from '../components/MetaTags'
-import Typewriter from '../components/Typewriter'
 import { motion } from "motion/react"
 import FeaturedList from '../components/FeaturedProjectSwiper/FeaturedList'
 import HomeHeroWrapper from '../components/HomeHero/HomeHero'
+import Typewrite from '../components/TextChange'
+
 
 
 export async function getStaticProps() {
@@ -51,7 +52,8 @@ export default function Home(props) {
             <h1>
 
               <p className='subheading' style={{ fontSize: "2rem" }}>Hello world. I am a UX/UI</p>
-              <p className='display-type' style={{ fontSize: "12rem" }}><Typewriter speed={120}>Designer</Typewriter></p>
+              <p><Typewrite/></p>
+             
 
             </h1>
 
