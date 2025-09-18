@@ -51,8 +51,8 @@ ${props => props.mobile && `
 const NavLinks = [
   { path: "/", name: "Home" },
   { path: "/about", name: "About" },
-  { path: "/services", name: "Services" },
   { path: "/portfolio", name: "Portfolio" },
+    { path: "/blog", name: "Blog" },
   { path: "/contact", name: "contact" }
 ]
 
@@ -71,7 +71,7 @@ const LinksList = (props) => {
             initial={{ opacity: 0, transform: `translateX(-100%)` }}
             whileInView={{ opacity: 1, transform: `translateX(0)` }}>
 
-            <NavLink to={item.path}>{item.name}</NavLink>
+            <NavLink to={item.path} exact={item.path==="/"}>{item.name}</NavLink>
 
           </motion.li>
         )

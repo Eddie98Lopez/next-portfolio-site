@@ -62,18 +62,19 @@ padding: .5rem;
 width:100%;
 font-family: acumin-pro, sans-serif;
 font-size:1.15rem;
-background: rgba(0,0,0,.025);
+background: rgba(255,255,255,1);
 outline:none;
 border-radius:3px;
-border:2px solid rgba(0,0,0,0);
-transition:outline .2s ease-in;
+border:1px solid lightgrey;
+transition:all.2s ease-in;
 &::placeholder{
     opacity:.3;
 }
 
 &:focus{
     transition: border .2s ease-in;
-    border: 2px solid lightgrey;
+    border: 1px solid grey;
+    outline: 1px solid grey;
 }
 @media only screen and (max-width:768px){
     font-size:1.5rem;
@@ -88,17 +89,18 @@ font-family: acumin-pro, sans-serif;
 font-size:1.15rem;
 resize:none;
 height:10rem;
-background: rgba(0,0,0,.025);
+background: rgba(255,255,255,1);
 outline:none;
 border-radius:3px;
-border:none;
+border: 1px solid lightgrey;;
 transition:.2s ease-in;
 &::placeholder{
     opacity:.3;
 }
 
 &:focus{
-    outline: 2px solid grey;
+    outline: 1px solid grey;
+     border: 1px solid grey;
     transition: .2s ease-in;
 }
 @media only screen and (max-width:768px){

@@ -8,6 +8,24 @@ import { motion } from "motion/react"
 import FeaturedList from '../components/FeaturedProjectSwiper/FeaturedList'
 import HomeHeroWrapper from '../components/HomeHero/HomeHero'
 import Typewrite from '../components/TextChange'
+import styled from 'styled-components'
+
+const StyledH1 = styled.h1`
+font-size:2rem;
+@media only screen and (max-width:768px){
+text-align:center;
+& .subheading{
+font-size: clamp(1rem, calc(100vw * 160 / 768), 2rem);}
+
+}
+
+@media only screen and (max-width:425px){
+text-align:center;
+& .subheading{
+font-size: 1.15rem;}
+
+}
+`
 
 
 
@@ -49,13 +67,13 @@ export default function Home(props) {
             whileInView={{ opacity: 1 }}>
 
 
-            <h1>
+            <StyledH1>
 
-              <p className='subheading' style={{ fontSize: "2rem" }}>Hello world. I am a UX/UI</p>
+              <p className='subheading'>Hello world. I am a UX/UI</p>
               <p><Typewrite/></p>
              
 
-            </h1>
+            </StyledH1>
 
           </motion.div>
         </div>

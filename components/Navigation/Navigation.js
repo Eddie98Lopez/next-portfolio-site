@@ -18,7 +18,7 @@ const Nav = styled.nav`
 
   top: 0;
   z-index: 500;
-  padding: 3rem 5%;
+  padding: 2rem 5%;
   transition: all 0.3s ease-in-out;
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@ const Nav = styled.nav`
   & #nav-logo {
     transition: all 0.3s ease-in-out;
     width: auto;
-    height:${props=>props.scroll >= 50 ?'45px': "75px"};;
+    height:${props=>props.scroll >= 50 ?'45px': "60px"};;
   }
 
   & div {

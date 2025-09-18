@@ -59,6 +59,7 @@ const ContactForm = () => {
         <Field className='firstName'>
             <Label>First</Label>
             <Input
+            tabIndex={1}
             type='text'
             name='first'
             onChange={change}
@@ -71,6 +72,7 @@ const ContactForm = () => {
         <Field className='lastName'>
             <Label>last</Label>
             <Input
+            tabIndex={2}
             type='text'
             name='last'
             onChange={change}
@@ -83,6 +85,7 @@ const ContactForm = () => {
         <Field className='email'>
             <Label>email</Label>
             <Input
+            tabIndex={3}
             type='email'
             name='email'
             onChange={change}
@@ -94,6 +97,7 @@ const ContactForm = () => {
         <Field className='subject'>
             <Label>subject</Label>
             <Input
+            tabIndex={4}
             type='text'
             name='subject'
             onChange={change}
@@ -106,6 +110,7 @@ const ContactForm = () => {
         <Field className='body'>
             <Label>Message</Label>
             <TextArea
+            tabIndex={5}
             type='text'
             name='body'
             onChange={change}
