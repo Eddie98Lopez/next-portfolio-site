@@ -1,36 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { MobileContext } from "./MobileContext";
-import LinksList from "./LinksList";
-import styled from "styled-components";
-import { useRouter } from "next/router";
-import Logo from "../Logo";
-import Hamburger from "./Hamburger";
-import SocialList from "../SocialMedia/SocialList";
-import Link from "next/link";
-import { useScroll } from "../../utils/ScrollPosition";
-
+import React, { useState, useEffect } from 'react';
+import { MobileContext } from './MobileContext';
+import LinksList from './LinksList';
+import styled from 'styled-components';
+import { useRouter } from 'next/router';
+import Logo from '../Logo';
+import Hamburger from './Hamburger';
+import SocialList from '../SocialMedia/SocialList';
+import Link from 'next/link';
+import { useScroll } from '../../utils/ScrollPosition';
 
 const Nav = styled.nav`
   width: 100%;
-  height: ${props=>props.scroll >= 50 ?'50px': "90px"};
+  height: ${(props) => (props.scroll >= 50 ? '50px' : '90px')};
   box-sizing: border-box;
-  position: ${props=>props.scroll >= 50 ?'fixed': "sticky"};
+  position: ${(props) => (props.scroll >= 50 ? 'fixed' : 'sticky')};
 
   top: 0;
   z-index: 500;
   padding: 2rem 5%;
   transition: all 0.3s ease-in-out;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 1.75rem;
-  border-bottom:${props=>props.scroll <= 50 ? "none": "2px solid black"};
-  
-  box-shadow:${props=>props.scroll >= 50 ?'3px 3px 5px rgba(0,0,0,.1)': "3px 3px 3px rgba(0,0,0,0)"};
+  border-bottom: ${(props) => (props.scroll <= 50 ? 'none' : '2px solid black')};
+
+  box-shadow: ${(props) =>
+    props.scroll >= 50 ? '3px 3px 5px rgba(0,0,0,.1)' : '3px 3px 3px rgba(0,0,0,0)'};
 
   & #nav-logo {
     transition: all 0.3s ease-in-out;
     width: auto;
-    height:${props=>props.scroll >= 50 ?'45px': "60px"};;
+    height: ${(props) => (props.scroll >= 50 ? '45px' : '60px')};
   }
 
   & div {
@@ -68,7 +69,7 @@ const Nav = styled.nav`
       align-items: center;
       justify-content: space-between;
       transition: all 0.3s ease-in-out;
-      margin-bottom: ${(props) => (props.mobile ? ".5rem" : "0")};
+      margin-bottom: ${(props) => (props.mobile ? '.5rem' : '0')};
     }
 
     & .social-list {
@@ -79,7 +80,7 @@ const Nav = styled.nav`
 
 const Navigation = (props) => {
   const [mobile, setMobile] = useState(false);
-  const scroll = useScroll()
+  const scroll = useScroll();
 
   const { asPath } = useRouter();
 
@@ -87,7 +88,7 @@ const Navigation = (props) => {
     setMobile(false);
   }, [asPath]);
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     window.onscroll = function () {
       scrollFunction();
     };
@@ -95,7 +96,7 @@ const Navigation = (props) => {
 
   return (
     <MobileContext.Provider value={{ mobile, setMobile }}>
-      <Nav id="navbar" mobile={mobile} scroll={scroll} className={scroll>=50 && "specialBG"}>
+      <Nav id="navbar" mobile={mobile} scroll={scroll} className={scroll >= 50 && 'specialBG'}>
         <div className="mobile-nav">
           <Link href="/">
             <Logo id="nav-logo" />

@@ -9,6 +9,10 @@ import FeaturedList from '../components/FeaturedProjectSwiper/FeaturedList'
 import HomeHeroWrapper from '../components/HomeHero/HomeHero'
 import Typewrite from '../components/TextChange'
 import styled from 'styled-components'
+import Section from '../components/Section'
+import ContactForm from '../components/Forms/ContactForm'
+import ModalProvider from '../components/Modal/ModalProvider'
+import Heading from '../components/Heading'
 
 const StyledH1 = styled.h1`
 font-size:2rem;
@@ -80,7 +84,21 @@ export default function Home(props) {
 
         <div className='b'>Image</div>
       </HomeHeroWrapper>
+
+      <Section>
+     
+      <Heading string="Featured Projects"/>
       <FeaturedList />
+      </Section>
+
+      <Section>
+        <ModalProvider>
+          <Heading string="Contact Me"/>
+          <div style={{maxWidth:1200,justifySelf:'center', width:'100%',}}>
+        <ContactForm/>
+        </div>
+        </ModalProvider>
+      </Section>
     </>
   </>
   )

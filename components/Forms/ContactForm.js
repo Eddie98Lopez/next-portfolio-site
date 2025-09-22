@@ -10,7 +10,7 @@ const initialForm = {
     first:'',
     last:'',
     email:'',
-    subject:'',
+    phone:'',
     body:''
 }
 
@@ -94,17 +94,17 @@ const ContactForm = () => {
             />
             <div className='errs'>{errs.email}</div>
         </Field>
-        <Field className='subject'>
-            <Label>subject</Label>
+        <Field className='phone'>
+            <Label>phone</Label>
             <Input
             tabIndex={4}
-            type='text'
-            name='subject'
+            type='tel'
+            name='phone'
             onChange={change}
-            value={form.subject}
-            placeholder='subject'
+            value={form.phone}
+            placeholder='phone'
             />
-            <div className='errs'>{errs.subject}</div>
+            <div className='errs'>{errs.phone}</div>
         </Field>
 
         <Field className='body'>
