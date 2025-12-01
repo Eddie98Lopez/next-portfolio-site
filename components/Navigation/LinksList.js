@@ -32,6 +32,7 @@ const LinksWrapper = styled.div`
   box-sizing: border-box;
   @media only screen and (max-width: 768px) {
     display: grid;
+    grid-area: link-menu;
     grid-template-rows: minmax(0px, 1fr);
 
     ${(props) =>
@@ -52,10 +53,12 @@ const LinksWrapper = styled.div`
 
 const NavLinks = [
   { path: '/', name: 'Home' },
-  { path: '/about', name: 'About' },
+  { path: '/#services', name: 'Services' },
+  { path: '/#contact', name: 'Contact' },
+  /*   { path: '/about', name: 'About' },
   { path: '/portfolio', name: 'Portfolio' },
   { path: '/blog', name: 'Blog' },
-  { path: '/contact', name: 'contact' },
+  { path: '/contact', name: 'contact' }, */
 ];
 
 const LinksList = (props) => {

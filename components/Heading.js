@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import React from 'react'
+import styled from 'styled-components';
+import React from 'react';
 
 const HeadingLayout = styled.div`
 
@@ -10,13 +10,16 @@ display:grid;
 place-content:left center;
 z-index:-1;
 transform:translateY(70px);
+margin-bottom: 3rem;
+overflow:hidden;  
 
 
 & div{
 
 width:100%;
-opacity:.05;
-font-size:15rem;
+color:white;
+opacity:1;
+font-size:10rem;
 text-wrap:wrap;
 }
 
@@ -31,17 +34,15 @@ height:auto;
 
 
 
-`
-
+`;
 
 const Heading = ({ string }) => {
-    return (
-        <HeadingLayout>
-            <div className='display-type'>{string}</div>
-            <h2 className="subheading">{string}</h2>
+  return (
+    <HeadingLayout>
+      <div className="display-type">{string}</div>
+      <h2 className="subheading">{string}</h2>
+    </HeadingLayout>
+  );
+};
 
-        </HeadingLayout>
-    )
-}
-
-export default Heading
+export default Heading;

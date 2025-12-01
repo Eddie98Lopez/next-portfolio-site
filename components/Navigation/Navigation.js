@@ -61,11 +61,16 @@ const Nav = styled.nav`
   }
 
   @media only screen and (max-width: 768px) {
-    display: block;
+    display: grid;
+    gap: 0;
+    grid-template-areas: 'logo hamburger' 'link-menu link-menu';
+    height: auto;
+    padding: 1rem 5%;
     & .mobile-nav {
       box-sizing: border-box;
       width: 100%;
       display: flex;
+      height: auto;
       align-items: center;
       justify-content: space-between;
       transition: all 0.3s ease-in-out;
@@ -88,21 +93,13 @@ const Navigation = (props) => {
     setMobile(false);
   }, [asPath]);
 
-  /*   useEffect(() => {
-    window.onscroll = function () {
-      scrollFunction();
-    };
-  }, []); */
-
   return (
     <MobileContext.Provider value={{ mobile, setMobile }}>
       <Nav id="navbar" mobile={mobile} scroll={scroll} className={scroll >= 50 && 'specialBG'}>
-        <div className="mobile-nav">
-          <Link href="/">
-            <Logo id="nav-logo" />
-          </Link>
-          <Hamburger />
-        </div>
+        <Link href="/">
+          <Logo id="nav-logo" />
+        </Link>
+        <Hamburger />
 
         <LinksList />
         {/* <SocialList /> */}

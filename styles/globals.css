@@ -1,82 +1,162 @@
-@import url("https://use.typekit.net/rim2aok.css");
+@import url('https://use.typekit.net/rim2aok.css');
 @import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap');
 @font-face {
-  font-family: "GrockMarker";
-  src: url('/GrockMarker/font.woff2') format('woff2'), url('/GrockMarker/font.woff') format('woff');
+  font-family: 'GrockMarker';
+  src:
+    url('/GrockMarker/font.woff2') format('woff2'),
+    url('/GrockMarker/font.woff') format('woff');
 }
-
 
 :root {
-  
   --font-size-base: 16px;
-  --display-type: "Graffiti";
-  --subheading-type: "Cascadia Code", sans-serif;
-  --body-copy:"Cascadia Code", sans-serif;
+  --display-type: 'GrockMarker';
+  --subheading-type: 'Cascadia Code', sans-serif;
+  --body-copy: 'Cascadia Code', sans-serif;
 }
 
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
   box-sizing: border-box;
-  font-family: "Cascadia Code", sans-serif;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  font-family: 'Cascadia Code', sans-serif;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
-	background: url("/white-texture.jpg");
+  line-height: 1;
+  background: url('/white-texture.jpg');
   background-repeat: no-repeat;
   background-size: cover; /* Ensures the image covers the entire background */
   background-position: center center; /* Centers the background image */
   background-attachment: fixed;
+  font-family: 'Cascadia Code', sans-serif;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.specialBG{
-	background: url("/white-texture.jpg");
+.specialBG {
+  background: url('/white-texture.jpg');
   background-repeat: no-repeat;
   background-size: cover; /* Ensures the image covers the entire background */
   background-position: center center; /* Centers the background image */
   background-attachment: fixed;
-
 }
 
-.subheading{
-font-family: "Cascadia Code", sans-serif;
+.subheading {
+  font-family: 'Cascadia Code', sans-serif;
   font-optical-sizing: auto;
   font-weight: 450;
   font-style: normal;
@@ -84,9 +164,13 @@ font-family: "Cascadia Code", sans-serif;
   text-transform: uppercase;
 }
 
-.display-type{
- font-family:"GrockMarker", sans-serif;
- text-transform: uppercase;
- font-style: normal;
- letter-spacing: -10px;
+.display-type {
+  font-family: 'GrockMarker', sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  letter-spacing: -10px;
+}
+
+p {
+  line-height: 1.5em;
 }

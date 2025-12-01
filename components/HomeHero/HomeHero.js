@@ -1,29 +1,54 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const HomeHeroWrapper = styled.section`
-width:100%;
-height:97vh;
-display:grid;
-gap:30px;
-grid-template-areas: "a a a a a b b b b";
-padding: 80px 8%;
-padding-top:90px;
+  width: 100%;
+  height: 95vh;
+  box-sizing: border-box;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 50% 50%;
+  padding: 80px 8%;
+  overflow: hidden;
 
-& .a{
-grid-area:a;
-display:flex;
-flex-direction:column;
-justify-content:center;
-};
+  & .a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
 
-& .b{
-grid-area:b;
-};
+  & .b {
+    display: flex;
+    place-items: center;
 
-@media only screen and (max-width:768px){
-grid-template-areas: "b" "a";}
+    & img {
+      height: 150%;
+      width: auto;
+      mix-blend-mode: multiply;
+    }
+  }
 
-`
-export default HomeHeroWrapper
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 100%;
+    grid-template-areas: 'b' 'a';
+    height: auto;
 
+    & .a {
+      grid-area: a;
+      text-align: center;
+      gap: 1.5rem;
+    }
 
+    & .b {
+      text-align: center;
+      place-content: center;
+      grid-area: b;
+      & img {
+        width: 90%;
+        height: auto;
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+`;
+export default HomeHeroWrapper;
