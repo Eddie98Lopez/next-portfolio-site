@@ -1,12 +1,14 @@
 import React from 'react'
 import UnderConstruction from '../components/UnderConstruction'
 
-const services = () => {
+
+const blog = () => {
   return (
     <div>
       <UnderConstruction/>
+
     </div>
   )
 }
 
-export default services
+export default blog

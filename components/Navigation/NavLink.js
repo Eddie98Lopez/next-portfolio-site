@@ -3,7 +3,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
 
-const StyledLink = styled.a`
+const StyledLink = styled.span`
 
 text-decoration:none;
 box-sizing: border-box;

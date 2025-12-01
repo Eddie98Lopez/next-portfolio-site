@@ -1,23 +1,21 @@
-import React from "react";
-import styled from "styled-components";
-import { useMobile } from "./MobileContext";
-
+import React from 'react';
+import styled from 'styled-components';
+import { useMobile } from './MobileContext';
 
 const Burger = styled.div`
-
   height: 40px;
   width: 40px;
- 
-  display:none;
+
+  display: none;
   position: relative;
   box-sizing: border-box;
-  transform:translate(0,.1rem);
+  transform: translate(0, 0.1rem);
 
   & div {
     transition: all 0.3s ease-in-out;
     box-sizing: border-box;
     transform-origin: center;
-  
+
     background: black;
     width: 30px;
     height: 5px;
@@ -53,19 +51,19 @@ const Burger = styled.div`
   
 }`}
 
-@media only screen and (max-width:768px) {
+  @media only screen and (max-width:768px) {
     display: flex;
-    justify-content:center;
-    gap:.25rem;
-    flex-direction:column;
-    align-items:center;
-
-}
+    justify-content: center;
+    gap: 0.25rem;
+    flex-direction: column;
+    align-items: center;
+    grid-area: hamburger;
+  }
 `;
 
 const Hamburger = (props) => {
-  const {mobile,setMobile} = useMobile();
- 
+  const { mobile, setMobile } = useMobile();
+
   return (
     <Burger
       mobile={mobile}
@@ -74,11 +72,9 @@ const Hamburger = (props) => {
         setMobile(!mobile);
       }}
     >
-    
       <div id="Rectangle_9" />
       <div id="Rectangle_10" />
       <div id="Rectangle_11" />
-     
     </Burger>
   );
 };

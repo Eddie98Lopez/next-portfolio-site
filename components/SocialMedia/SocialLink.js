@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const LinkWrap = styled.a`
+const LinkWrap = styled.div`
 text-align:center;
 text-transform:capitalize;
 text-decoration:none;

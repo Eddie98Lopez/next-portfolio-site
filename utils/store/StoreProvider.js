@@ -16,8 +16,8 @@ const StoreProvider = ({ children, ...props }) => {
 
   useEffect(()=>{
  setTimeout(()=>{
-  getProjects(dispatch)
- },3000)
+  setStore({...store,loading:false})
+ },5000)
     //console.log(store)
 
   },[])

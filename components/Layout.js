@@ -2,18 +2,28 @@ import React from 'react'
 import Navigation from './Navigation/Navigation'
 import Footer from './Footer'
 import Loading from './Loading'
-import '../styles/globals.css'
+import { useStore } from '../utils/store/StoreProvider'
+//import '../styles/globals.css'
 
 
 const Layout = ({children, ...props}) => {
-  return (
+
+  const {loading} = useStore().store
+  console.log(loading)
+
+  if(loading){
+    return(<Loading/>)
+  }else{
+      return (
     <>
-    <Loading/>
+  
     <Navigation/>
     {children}
     <Footer/>
     </>
   )
+  }
+
 }
 
 export default Layout

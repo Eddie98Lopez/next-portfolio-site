@@ -10,7 +10,7 @@ const initialForm = {
     first:'',
     last:'',
     email:'',
-    subject:'',
+    phone:'',
     body:''
 }
 
@@ -59,6 +59,7 @@ const ContactForm = () => {
         <Field className='firstName'>
             <Label>First</Label>
             <Input
+            tabIndex={1}
             type='text'
             name='first'
             onChange={change}
@@ -71,6 +72,7 @@ const ContactForm = () => {
         <Field className='lastName'>
             <Label>last</Label>
             <Input
+            tabIndex={2}
             type='text'
             name='last'
             onChange={change}
@@ -83,6 +85,7 @@ const ContactForm = () => {
         <Field className='email'>
             <Label>email</Label>
             <Input
+            tabIndex={3}
             type='email'
             name='email'
             onChange={change}
@@ -91,21 +94,23 @@ const ContactForm = () => {
             />
             <div className='errs'>{errs.email}</div>
         </Field>
-        <Field className='subject'>
-            <Label>subject</Label>
+        <Field className='phone'>
+            <Label>phone</Label>
             <Input
-            type='text'
-            name='subject'
+            tabIndex={4}
+            type='tel'
+            name='phone'
             onChange={change}
-            value={form.subject}
-            placeholder='subject'
+            value={form.phone}
+            placeholder='phone'
             />
-            <div className='errs'>{errs.subject}</div>
+            <div className='errs'>{errs.phone}</div>
         </Field>
 
         <Field className='body'>
             <Label>Message</Label>
             <TextArea
+            tabIndex={5}
             type='text'
             name='body'
             onChange={change}
