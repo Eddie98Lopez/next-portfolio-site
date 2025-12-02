@@ -1,15 +1,17 @@
-import supabase from "../../utils/supabase"
-
+import supabase from '../../utils/supabase';
 
 const sendMessage = async (form) => {
-    try {
-        const {data} = await supabase.from('messages').insert(form)
-        console.log(data)
-        
-    } catch (error) {
-        console.log(error)
-        
+  try {
+    const { data, error } = await supabase.from('messages').insert([form]).select();
+    console.log(data);
+    if (error) {
+      console.log({ ...error });
+      throw new Error(error);
     }
- }
+    return data;
+  } catch (error) {
+    console.log({ ...error });
+  }
+};
 
- export default sendMessage
+export default sendMessage;
