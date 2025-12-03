@@ -6,10 +6,9 @@ export default async function handler(req, res) {
     const { data, error } = await supabase.from('messages').insert([req.body]).select();
 
     if (error) {
-      throw new Error(error);
+      res.status(500).json(error);
     }
-
-    return data;
+    res.status(200).json(data);
   } else {
     // Handle any other HTTP method
   }
