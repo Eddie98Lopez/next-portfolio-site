@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Label, Input, Field, Form, TextArea, SubmitButton } from './Forms.styles';
 import contactSchema from './contactSchema';
 import * as Yup from 'yup';
-import sendMessage from './sendMessage';
 import { useModal } from '../Modal/ModalProvider';
 import axios from 'axios';
 
@@ -37,7 +36,7 @@ const ContactForm = () => {
       .then((res) => {
         setForm(initialForm);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log({ ...err }));
   };
 
   useEffect(() => {

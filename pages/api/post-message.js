@@ -4,6 +4,12 @@ import supabase from '../../utils/supabase';
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { data, error } = await supabase.from('messages').insert([req.body]).select();
+
+    if (error) {
+      throw new Error(error);
+    }
+
+    return data;
   } else {
     // Handle any other HTTP method
   }
