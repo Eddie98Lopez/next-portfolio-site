@@ -38,7 +38,7 @@ const Typewrite = () => {
     const interval = setInterval(() => {
       const currentIndex = titles.indexOf(text);
 
-      if (currentIndex + 1 > titles.length) {
+      if (currentIndex + 1 >= titles.length) {
         setText(titles[0]);
       } else {
         setText(titles[currentIndex + 1]);
