@@ -50,7 +50,7 @@ export default function Home(props) {
             whileInView={{ opacity: 1 }}
             className="a"
           >
-            <p className="subheading">Hello world. I am a UX/UI</p>
+            <p className="subheading">Hello world. I am a frontend...</p>
 
             <Typewrite />
 

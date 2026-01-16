@@ -10,8 +10,9 @@ const StyledP = styled.div`
     text-transform: uppercase;
     font-style: normal;
     width: 100%;
-    font-family: 'GrockMarker', sans-serif;
-    letter-spacing: -10px;
+    font-family: var(--display-type);
+    letter-spacing: 5px;
+    font-variation-settings: 'wght' 600;
     text-wrap: wrap;
     font-size: clamp(5rem, calc(100vw * 160 / 1440), 10rem);
 
@@ -28,12 +29,20 @@ const StyledP = styled.div`
   }
 `;
 
+const titles = ['designer.', 'developer.', 'engineer.'];
+
 const Typewrite = () => {
-  const [text, setText] = useState('designer');
+  const [text, setText] = useState(titles[0]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setText((prev) => (prev === 'designer' ? 'developer' : 'designer'));
+      const currentIndex = titles.indexOf(text);
+
+      if (currentIndex + 1 > titles.length) {
+        setText(titles[0]);
+      } else {
+        setText(titles[currentIndex + 1]);
+      }
     }, 5000);
 
     // cleanup when text changes or component unmounts

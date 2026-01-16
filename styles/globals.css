@@ -9,9 +9,9 @@
 
 :root {
   --font-size-base: 16px;
-  --display-type: 'GrockMarker';
-  --subheading-type: 'Cascadia Code', sans-serif;
-  --body-copy: 'Cascadia Code', sans-serif;
+  --display-type: 'mazurquica-vf', sans-serif;
+  --subheading-type: 'pt-mono', monospace;
+  --body-copy: 'pt-mono', monospace;
 }
 
 html,
@@ -99,7 +99,7 @@ video {
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  font-family: 'Cascadia Code', sans-serif;
+  font-family: var(--body-copy, 'monospace');
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
@@ -125,7 +125,7 @@ body {
   background-size: cover; /* Ensures the image covers the entire background */
   background-position: center center; /* Centers the background image */
   background-attachment: fixed;
-  font-family: 'Cascadia Code', sans-serif;
+  font-family: var(--body-copy, 'monospace');
 }
 ol,
 ul {
@@ -156,19 +156,20 @@ table {
 }
 
 .subheading {
-  font-family: 'Cascadia Code', sans-serif;
+  font-family: var(--body-copy, 'monospace');
   font-optical-sizing: auto;
-  font-weight: 450;
+  font-weight: 600;
   font-style: normal;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .display-type {
-  font-family: 'GrockMarker', sans-serif;
+  font-family: var(--display-type);
+  font-variation-settings: 'wght' 600;
   text-transform: uppercase;
   font-style: normal;
-  letter-spacing: -10px;
+  letter-spacing: 2px;
 }
 
 p {
